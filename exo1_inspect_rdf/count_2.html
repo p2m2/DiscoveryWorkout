@@ -42,9 +42,14 @@
              .then((response) => {
                 iconElement.className = 'icon fas fa-check-circle';
                 iconElement.style.color = 'green';
-                message = "termes mesh associés à chebi:133719 ->"+response.results.bindings.length ;
-                console.log(message) ;
-                messageElement.textContent = message;
+                message = "<p>termes mesh associés à chebi:133719 ->"+response.results.bindings.length + "</p>" ;
+                message += "<li>"
+                for (let i=0;i<response.results.bindings.length;i++) {
+                  let mesh=response.results.bindings[i]["objetMeshTerm"].value;
+                  message += "<ul>" + mesh + "</ul>" ;
+                }
+                message += "</li>"
+                messageElement.innerHTML = message;
                 messageElement.style.color = 'green';
               }
             ).catch( (error) => {
