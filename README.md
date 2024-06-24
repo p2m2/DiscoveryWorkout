@@ -3,6 +3,11 @@
 https://github.com/p2m2/discovery
 https://p2m2.github.io/discovery/
 
+## interfaces
+
+ - https://github.com/p2m2/discovery/blob/master/js/src/main/scala/fr/inrae/metabohub/semantic_web/SWDiscoveryHelperJs.scala
+ - https://github.com/p2m2/discovery/blob/master/js/src/main/scala/fr/inrae/metabohub/semantic_web/SWDiscoveryJs.scala
+
 ## features
 
     Programming/building request with immutables objects
@@ -23,3 +28,9 @@ https://p2m2.github.io/discovery/
 
 - 3) Combien de termes MeSH sont associés au composé [chebi:133719](http://purl.obolibrary.org/obo/CHEBI_133719)
     [view html](./exo1_inspect_rdf/count_2.html)
+
+- 4) Nous allons chercher des informations sur les termes D (TopicalDescriptor) en ajoutant une source (sparqlEndpoint) et nous allons nous aider du "helper" de discovery pour inspecter les relations existantes autours des valeurs de `objetMeshTerm`.
+    [view html](./exo1_inspect_rdf/count_3.html)
+
+- 5) Affichage des labels des descripteurs
+    [view html](./exo1_inspect_rdf/count_4.html)
