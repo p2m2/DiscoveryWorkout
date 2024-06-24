@@ -1,0 +1,21 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/p2m2/discovery@0.4.3/dist/discovery-web.min.js"> </script> 
+<script>
+      var config = SWDiscoveryConfiguration
+                    .init()
+                    .urlFile("https://raw.githubusercontent.com/p2m2/tp-discovery-websempilot/main/rdf/triples_assos_CHEBI_MESH_sub.ttl");
+
+      SWDiscovery(config)
+          .prefix("chebi","http://purl.obolibrary.org/obo/CHEBI_")
+          .something("some")
+          .set(URI("chebi:133719"))
+          .select("some")
+             .commit()
+             .raw()
+             .then((response) => {
+                  console.log("count:"+response.results.bindings.length)
+                  }
+            ).catch( (error) => {
+              console.error(" -- catch exception --")
+              console.error(error)
+            } );
+ </script>
