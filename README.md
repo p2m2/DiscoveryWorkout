@@ -55,3 +55,11 @@ https://p2m2.github.io/discovery/
 - 9) Ajout d'une barre de progression lors d'une envoie d'une requete
 
     - [view html](./exo2_html_view/view_5.html)
+
+- 10) Décoration d'un éléments ressource de la requête et encodage de l'etat de la requête dans une chaine de caracteres pour le transfere HTTP 
+
+    - [view html](./exo3_export/export_1.html)
+
+- 11) Instanciation et utilisation de la requete à partir d'un encodage.
+
+    - [view html](./exo3_export/export_2.html)
