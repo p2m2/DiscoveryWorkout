@@ -66,8 +66,11 @@
 </body>
   
 <script>
+      const rowsPerPage = 5;
+      
       var config = SWDiscoveryConfiguration
                     .init()
+                    .setPageSize(rowsPerPage)
                     .rdfContent(`
                     @prefix mesh: <http://id.nlm.nih.gov/mesh/> .
                     mesh:D005227 <http://myapp/is_selected> true . 
@@ -80,14 +83,11 @@
       const iconElement = document.getElementById('status-icon');
       const messageElement = document.getElementById('status-message');
 
-      const rowsPerPage = 5;
+      
       let currentPage = 1;
-
-      let data = [
-        { metabolite: 'John Doe', descripteur: 'john@example.com' }
-      ];
-
-
+      let lazyLoadedPages = [];
+      let numberOfResults = 0 ;
+      let data = [];
 
       SWDiscovery(config)
           .prefix("chebi","http://purl.obolibrary.org/obo/CHEBI_")
@@ -95,28 +95,22 @@
           .something("metabolite")
             //.set(URI("chebi:133719"))
              .isSubjectOf(URI("skos:related"),"objetMeshTerm")
-             //   .datatype(URI("rdfs:label"),"labelObjetMeshTerm")
+                .datatype(URI("rdfs:label"),"labelObjetMeshTerm")
                 .isSubjectOf(URI("<http://myapp/is_selected>"))
                   .set(Literal("true",URI("xsd:boolean")))
                   //.console()
-             .select("metabolite","objetMeshTerm")
-             .commit()
-             .raw()
-             .then((response) => {
+             .selectByPage("metabolite","objetMeshTerm","labelObjetMeshTerm")
+             .then((numberOfResultsAndlazyLoadedPages) => {
+                numberOfResults = Object.values(numberOfResultsAndlazyLoadedPages)[0];
+                lazyLoadedPages = Object.values(numberOfResultsAndlazyLoadedPages)[1];
+
+                console.log(numberOfResults);
                 iconElement.className = 'icon fas fa-check-circle';
                 iconElement.style.color = 'green';
-                data = []
+                data = Array(numberOfResults).fill(null);
                 currentPage = 1;
-
-                for (let i=0;i<response.results.bindings.length;i++) {
-                  let metabolite=response.results.bindings[i]["metabolite"].value;
-                  let mesh=response.results.bindings[i]["objetMeshTerm"].value;
-                  data.push({metabolite: metabolite, descripteur: mesh})
-                }
-                
-                renderTable(currentPage);
-                renderPagination();
-                
+                load(lazyLoadedPages,currentPage)
+               
               }
             ).catch( (error) => {
                 iconElement.className = 'icon fas fa-times-circle';
@@ -125,13 +119,41 @@
                 messageElement.style.color = 'red';
             } );
 
+    function load(lazyLoadedPages,page) {
+        console.log("load page:"+page)
+
+        /* on execute la requete seulement si celle-ci n'a pas été déjà chargée ! */
+        const startIndex = (page - 1) * rowsPerPage;
+
+        if (data[startIndex] == null) {
+            
+            lazyLoadedPages[(page-1)]
+                    .commit()
+                    .raw()
+                    .then((response) => {
+                       
+                        for (let i=0;i<response.results.bindings.length;i++) {
+                            let metabolite=response.results.bindings[i]["metabolite"].value;
+                            let mesh=response.results.bindings[i]["objetMeshTerm"].value;
+                            data[startIndex+i] = {metabolite: metabolite, descripteur: mesh} ;
+                        }
+                        renderTable(page);
+                        renderPagination();
+                    })
+        } else {
+            renderTable(page);
+            renderPagination();
+        }
+        
+    }
 
     function renderTable(page) {
         const startIndex = (page - 1) * rowsPerPage;
         const endIndex = startIndex + rowsPerPage;
         const tableBody = document.querySelector('#data-table tbody');
         tableBody.innerHTML = '';
-
+        console.log(data);
+        console.log(data.slice(startIndex, endIndex));
         data.slice(startIndex, endIndex).forEach(row => {
             const tr = document.createElement('tr');
             Object.values(row).forEach(cell => {
@@ -144,7 +166,9 @@
     }
 
     function renderPagination() {
-        const pageCount = Math.ceil(data.length / rowsPerPage);
+        let pageCount = numberOfResults / rowsPerPage ;
+        if (numberOfResults % rowsPerPage > 0 ) pageCount += 1 ;
+
         const paginationContainer = document.getElementById('pagination-container');
         paginationContainer.innerHTML = '';
 
@@ -157,7 +181,7 @@
             }
             button.addEventListener('click', () => {
                 currentPage = i;
-                renderTable(currentPage);
+                load(lazyLoadedPages,currentPage);
                 updatePaginationButtons();
             });
             paginationContainer.appendChild(button);

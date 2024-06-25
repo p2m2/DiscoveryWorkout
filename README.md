@@ -44,6 +44,10 @@ https://p2m2.github.io/discovery/
     
     - [view html](./exo2_html_view/view_2.html)
 
-- 7) Utilsation des "laziest results" pour l'affichage dans un tableau 
+- 7) Affichage des resultats dans un tableau html 
 
     - [view html](./exo2_html_view/view_3.html)
+
+- 8) Utilsation des "laziest results" pour l'affichage dans un tableau 
+
+    - [view html](./exo2_html_view/view_4.html)
