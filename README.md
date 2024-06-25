@@ -40,7 +40,10 @@ https://p2m2.github.io/discovery/
     
     - [view html](./exo2_html_view/view_1.html)
 
-- 6) Selection d'une liste de descripteurs pour cibler les metabolites en relation
+- 6) Selection d'une liste de descripteurs pour cibler les metabolites en relation en definissant un sous graph rdf de selection des descripteurs
     
     - [view html](./exo2_html_view/view_2.html)
 
+- 7) Utilsation des "laziest results" pour l'affichage dans un tableau 
+
+    - [view html](./exo2_html_view/view_3.html)
