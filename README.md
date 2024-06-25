@@ -38,4 +38,9 @@ https://p2m2.github.io/discovery/
 
 - 5) Affichage des labels des descripteurs
     
-    - [view html](./exo1_inspect_rdf/count_4.html)
+    - [view html](./exo2_html_view/view_1.html)
+
+- 6) Selection d'une liste de descripteurs pour cibler les metabolites en relation
+    
+    - [view html](./exo2_html_view/view_2.html)
+
