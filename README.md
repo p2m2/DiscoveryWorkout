@@ -51,3 +51,7 @@ https://p2m2.github.io/discovery/
 - 8) Utilsation des "laziest results" pour l'affichage dans un tableau 
 
     - [view html](./exo2_html_view/view_4.html)
+
+- 9) Ajout d'une barre de progression lors d'une envoie d'une requete
+
+    - [view html](./exo2_html_view/view_5.html)
