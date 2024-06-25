@@ -10,6 +10,9 @@
 <script>
     const messageElement = document.getElementById('status-message');
     const rowsPerPage = 5 ;
+    
+    const html = await = fetch("https://raw.githubusercontent.com/p2m2/tp-discovery-websempilot/main/exo3_export/template.html")
+
     var config = SWDiscoveryConfiguration
                     .init()
                     .setPageSize(rowsPerPage)
@@ -31,5 +34,15 @@
                   .set(Literal("true",URI("xsd:boolean")))
                   .getSerializedString();
 
+
+     // Créer un nouvel élément <a>
+    const link = document.createElement('a');
+
+    // Définir les attributs href et le texte du lien
+    link.setAttribute('href', 'https://raw.githubusercontent.com/p2m2/tp-discovery-websempilot/main/exo3_export/template.html?discovery='+"test");
+    link.textContent = 'display results !';
+
+    // Ajouter le lien au div
+    messageElement.appendChild(link);                
  </script>
  </html>    
