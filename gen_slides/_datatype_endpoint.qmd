@@ -1,0 +1,46 @@
+# Sparql Endpoint and Datatype
+
+## Goal
+- Send request to RDF database on web
+- Know caracteristic of a ressources
+
+## Code
+- JavaScript
+
+```{.js code-line-numbers="3|10|11-13|16-19|17|18"}
+var config = SWDiscoveryConfiguration
+    .init()
+    .sparqlEndpoint("https://metabolights.semantic-metabolomics.fr/sparql");
+
+SWDiscovery(config)
+    .prefix("metabolights","https://www.ebi.ac.uk/metabolights/property#")
+    .prefix("rdfs","http://www.w3.org/2000/01/rdf-schema#")
+    .something()
+        .isObjectOf(URI("metabolights:Xref"),"var_study")
+            .datatype(URI("rdfs:label"),"var_label")
+    .select("var_study", "var_label")
+        .commit()
+        .raw()
+    .then((response)=>{
+        let message = "<li>"
+        for (let i=0;i<response.results.bindings.length;i++) {
+            let study=response.results.bindings[i]["var_study"].value;
+            let label=response.results.datatypes["var_label"][study][0].value; 
+            message +=`<ul> ${study} is ${label}</ul>`;
+        }
+        message += "</li>"
+        isOK(message);
+    })
+```
+
+## Execute
+<br>
+```{=html}
+<iframe 
+   src="../samples/datatype_endpoint.html"
+   width="800"
+   height="400"
+></iframe>
+```
+
+## Exercice 

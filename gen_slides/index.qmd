@@ -23,5 +23,7 @@ format:
 {{< include _discovery.qmd >}}
 <!-- 1. Count ressources -->
 {{< include _count_ressource.qmd >}}
-<!-- 2. Find object -->
+<!-- 2. Find object or subject-->
 {{< include _get_object.qmd >}}
+<!-- 3. Get label of ressource and add endpoint sparql -->
+{{< include _datatype_endpoint.qmd >}}
