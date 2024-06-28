@@ -18,7 +18,7 @@ Objet
 
 ## Code
 -JS
-```{.js code-line-numbers="2,3|4|5|6|7-9|10-14"}
+```{.js code-line-numbers="2,3|4|5,6|7-9|10-14"}
 SWDiscovery(config)
     .prefix("chebi","http://purl.obolibrary.org/obo/CHEBI_")
     .prefix("skos","http://www.w3.org/2004/02/skos/core#")
@@ -40,8 +40,14 @@ SWDiscovery(config)
 <br>
 ```{=html}
 <iframe 
-   src="../exo2_html_view/view_1.html" 
+   src="../samples/get_objects.html" 
    width="500"
    height="400">
 </iframe>
 ```
+
+## Exercice
+
+* Get all compounds related to "Acid, Acyclic" in CID RDF database
+    + "Acid, Acyclic" => mesh terme D000144
+    + isObjectOf
