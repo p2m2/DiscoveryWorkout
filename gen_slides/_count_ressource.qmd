@@ -8,7 +8,7 @@ Subject
 →
 :::
 ::: {.absolute left=350 top=350 width="50" height="250" style="font-size:70pt; "}
-relation
+predicate
 :::
 ::: {.absolute left=750 top=200 width="50" height="250" style="font-size:70pt; "}
 Object
@@ -22,7 +22,7 @@ Subject
 →
 :::
 ::: {.absolute left=350 top=350 width="50" height="250" style="font-size:70pt; "}
-relation
+predicate
 :::
 ::: {.absolute left=750 top=200 width="50" height="250" style="font-size:70pt; "}
 Object

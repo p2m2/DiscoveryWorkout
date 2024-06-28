@@ -1,6 +1,6 @@
 # Get Object
 ## Goal
-Find all objects have a relation with hydroxyoctanoate (ChEBI ID = CHEBI:133719)
+Find all objects is related with hydroxyoctanoate (ChEBI ID = CHEBI:133719)
 
 ::: {.absolute left=50 top=200 width="50" height="250" style="font-size:70pt; "}
 `Subject`
@@ -9,7 +9,7 @@ Find all objects have a relation with hydroxyoctanoate (ChEBI ID = CHEBI:133719)
 `→`
 :::
 ::: {.absolute left=300 top=350 width="50" height="250" style="font-size:70pt; "}
-`relation`
+`predicate`
 :::
 ::: {.absolute left=750 top=200 width="50" height="250" style="font-size:70pt; "}
 Object
