@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Count Ressources</title>
+    <title>Get Object</title>
 
 <script 
     type="text/javascript" 
@@ -42,7 +42,7 @@
       .commit()
       .raw()
     .then((response) => {
-      message = "<p>termes mesh associés à chebi:133719 ->"+response.results.bindings.length + "</p>" ;
+      message = "<p>termes mesh associés à chebi:133719 ->"+response.results.bindings.length + "</p><li>" ;
       for (const binding of response.results.bindings) {
           message +=`<ul> ${binding["objetMeshTerm"].value} </ul>`;
       }

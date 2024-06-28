@@ -12,6 +12,6 @@ function isKO(error){
     const messageElement = document.getElementById('status-message');
     iconElement.className = 'icon fas fa-times-circle';
     iconElement.style.color = 'red';
-    messageElement.innerHTM = error;
+    messageElement.textContent = error.message;
     messageElement.style.color = 'red';
 }

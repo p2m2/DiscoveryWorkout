@@ -29,7 +29,7 @@ SWDiscovery(config)
     .commit()
     .raw()
     .then((response) => {
-        message = "<p>termes mesh associés à chebi:133719 ->"+response.results.bindings.length + "</p>" ;
+        message = "<p>termes mesh associés à chebi:133719 ->"+response.results.bindings.length + "</p><li>" ;
         for (const binding of response.results.bindings) {
             message +=`<ul> ${binding["objetMeshTerm"].value} </ul>`;
         }
@@ -65,7 +65,7 @@ SWDiscovery(config)
     .commit()
     .raw()
     .then((response) => {
-        message = "<p>Suject related mesh D000144 ->"+response.results.bindings.length + "</p>" ;
+        message = "<p>Suject related mesh D000144 ->"+response.results.bindings.length + "</p><li>" ;
         for (const binding of response.results.bindings) {
             message +=`<ul> ${binding["compounds"].value} </ul>`;
         }
@@ -85,7 +85,7 @@ SWDiscovery(config)
     .commit()
     .raw()
     .then((response) => {
-        message = "<p>Suject related mesh D000144 ->"+response.results.bindings.length + "</p>" ;
+        message = "<p>Suject related mesh D000144 ->"+response.results.bindings.length + "</p><li>" ;
         for (const binding of response.results.bindings) {
             message +=`<ul> ${binding["compounds"].value} </ul>`;
         }
