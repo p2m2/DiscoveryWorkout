@@ -27,8 +27,8 @@
                     .init()
                     .urlFile("https://raw.githubusercontent.com/p2m2/tp-discovery-websempilot/main/rdf/triples_assos_CHEBI_MESH_sub.ttl");
 
-      const iconElement = document.getElementById('status-icon');
-      const messageElement = document.getElementById('status-message');
+      let iconElement = document.getElementById('status-icon');
+      let messageElement = document.getElementById('status-message');
 
       SWDiscovery(config)
           .something("some")

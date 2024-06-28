@@ -25,8 +25,8 @@
 <script>
       var config = SWDiscoveryConfiguration
                     .init()
-                    .urlFile("https://raw.githubusercontent.com/p2m2/tp-discovery-websempilot/main/rdf/triples_assos_CHEBI_MESH_sub.ttl")
-                    .sparqlEndpoint("https://id.nlm.nih.gov/mesh/sparql");
+                    .urlFile("https://raw.githubusercontent.com/p2m2/tp-discovery-websempilot/main/rdf/triples_assos_CHEBI_MESH_sub.ttl");
+                    // .sparqlEndpoint("https://id.nlm.nih.gov/mesh/sparql");
 
       const iconElement = document.getElementById('status-icon');
       const messageElement = document.getElementById('status-message');
@@ -37,8 +37,8 @@
           .something("some")
             .set(URI("chebi:133719"))
              .isSubjectOf(URI("skos:related"),"objetMeshTerm")
-                .datatype(URI("rdfs:label"),"labelObjetMeshTerm")
-             .select("objetMeshTerm","labelObjetMeshTerm")
+                // .datatype(URI("rdfs:label"),"labelObjetMeshTerm")
+             .select("objetMeshTerm")
              .commit()
              .raw()
              .then((response) => {
@@ -46,10 +46,8 @@
                 iconElement.style.color = 'green';
                 message = "<p>termes mesh associés à chebi:133719 ->"+response.results.bindings.length + "</p>" ;
                 message += "<li>"
-                for (let i=0;i<response.results.bindings.length;i++) {
-                  let mesh=response.results.bindings[i]["objetMeshTerm"].value;
-                  let label=response.results.datatypes["labelObjetMeshTerm"][mesh][0].value; 
-                  message += "<ul>" + mesh + "&rarr;" + label + "</ul>" ;
+                for (const binding of response.results.bindings) {
+                  message += `<ul>${binding["objetMeshTerm"].value}</ul>` ;
                 }
                 message += "</li>"
                 messageElement.innerHTML = message;

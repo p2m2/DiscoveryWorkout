@@ -1,0 +1,65 @@
+# Count Ressouce
+
+## Goal
+::: {.absolute left=50 top=200 width="50" height="250" style="font-size:70pt; "}
+Sujet
+:::
+::: {.absolute left=400 top=135 width="250" height="250" style="font-size:150pt; "}
+→
+:::
+::: {.absolute left=350 top=350 width="50" height="250" style="font-size:70pt; "}
+relation
+:::
+::: {.absolute left=750 top=200 width="50" height="250" style="font-size:70pt; "}
+Objet
+:::
+
+## Goal
+::: {.absolute left=50 top=200 width="50" height="250" style="font-size:70pt; "}
+Sujet
+:::
+::: {.absolute left=400 top=135 width="250" height="250" style="font-size:150pt; "}
+→
+:::
+::: {.absolute left=350 top=350 width="50" height="250" style="font-size:70pt; "}
+relation
+:::
+::: {.absolute left=750 top=200 width="50" height="250" style="font-size:70pt; "}
+Objet
+:::
+
+Each part of triple is a ressource.
+
+We want to know how many ressources we have.
+
+## Code
+
+- Javascript
+```{.js code-line-numbers="1,2|3,4|6,7|8-10|12,13"}
+var config = SWDiscoveryConfiguration
+ .init()
+ .urlFile(`https://raw.githubusercontent.com/p2m2/tp-discovery-websempilot/
+           main/rdf/triples_assos_CHEBI_MESH_sub.ttl`);
+
+SWDiscovery(config)
+    .something("some")
+    .select("some")
+        .commit()
+        .raw()
+        .then((response) => {
+            // Show number of triplex
+            console.log("count:"+response.results.bindings.length)
+            }
+      ).catch( (error) => {
+        console.error(" -- catch exception --")
+        console.error(error)
+      } );
+```
+<!-- ::: footer
+::: -->
+
+## Execute
+<br>
+```{=html} 
+{{< include ../exo1_inspect_rdf/count_1b.html >}}
+```

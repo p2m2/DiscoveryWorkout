@@ -1,0 +1,11 @@
+# Animators
+::: columns
+::: {.column width="50%"}
+Olivier FILANGI 
+:::
+::: {.column width="50%"}
+Marcellino PALERME 
+<br>
+INRAE  Software assistant engeneer
+:::
+:::
