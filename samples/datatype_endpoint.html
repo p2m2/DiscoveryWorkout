@@ -43,13 +43,13 @@ SWDiscovery(config)
         .raw()
     .then((response)=>{
         console.log(response.results);
-        let message = "<li>"
+        let message = "<ul>"
         for (let i=0;i<response.results.bindings.length;i++) {
             let study=response.results.bindings[i]["var_study"].value;
             let label=response.results.datatypes["var_label"][study][0].value; 
-            message +=`<ul> ${study} is ${label}</ul>`;
+            message +=`<li> ${study} is ${label}</li>`;
         }
-        message += "</li>"
+        message += "</ul>"
         isOK(message);
     })
     .catch( (error) => {

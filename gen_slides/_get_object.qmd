@@ -29,11 +29,11 @@ SWDiscovery(config)
     .commit()
     .raw()
     .then((response) => {
-        message = "<p>termes mesh associés à chebi:133719 ->"+response.results.bindings.length + "</p><li>" ;
+        message = "<p>termes mesh associés à chebi:133719 ->"+response.results.bindings.length + "</p><ul>" ;
         for (const binding of response.results.bindings) {
-            message +=`<ul> ${binding["objetMeshTerm"].value} </ul>`;
+            message +=`<li> ${binding["objetMeshTerm"].value} </li>`;
         }
-        message += "</li>"
+        message += "</ul>"
         isOK(message);
 ```
 
@@ -65,33 +65,15 @@ SWDiscovery(config)
     .commit()
     .raw()
     .then((response) => {
-        message = "<p>Suject related mesh D000144 ->"+response.results.bindings.length + "</p><li>" ;
+        message = "<p>Suject related mesh D000144 ->"+response.results.bindings.length + "</p><ul>" ;
         for (const binding of response.results.bindings) {
-            message +=`<ul> ${binding["compounds"].value} </ul>`;
+            message +=`<li> ${binding["compounds"].value} </li>`;
         }
-        message += "</li>"
+        message += "</ul>"
         isOK(message);
 ```
+. . .
 
-## Solution
-```{.js}
-SWDiscovery(config)
-    .prefix("mesh","http://id.nlm.nih.gov/mesh/")
-    .prefix("skos","http://www.w3.org/2004/02/skos/core#")
-    .something("some")
-       .set(URI("mesh:D000144"))
-         .isObjectOf(URI("skos:related"),"compounds")
-    .select("compounds")
-    .commit()
-    .raw()
-    .then((response) => {
-        message = "<p>Suject related mesh D000144 ->"+response.results.bindings.length + "</p><li>" ;
-        for (const binding of response.results.bindings) {
-            message +=`<ul> ${binding["compounds"].value} </ul>`;
-        }
-        message += "</li>"
-        isOK(message);
-```
 ::: {.absolute right=0 top=200 style="background: white;"}
 ```{=html}
 <iframe 

@@ -42,11 +42,11 @@
       .commit()
       .raw()
     .then((response) => {
-      message = "<p>termes mesh associés à chebi:133719 ->"+response.results.bindings.length + "</p><li>" ;
+      message = "<p>termes mesh associés à chebi:133719 ->"+response.results.bindings.length + "</p><ul>" ;
       for (const binding of response.results.bindings) {
-          message +=`<ul> ${binding["objetMeshTerm"].value} </ul>`;
+          message +=`<li> ${binding["objetMeshTerm"].value} </li>`;
       }
-      message += "</li>"
+      message += "</ul>"
       isOK(message);                   
     })
     .catch( (error) => {
