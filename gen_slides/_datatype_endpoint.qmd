@@ -44,3 +44,41 @@ SWDiscovery(config)
 ```
 
 ## Exercice 
+
+* Use sparql endpoint of `FORUM` (https://forum.semantic-metabolomics.fr/sparql/)
+* Get information on chebi:27732
+    + Synonym (http://purl.obolibrary.org/obo/chebi/formula)
+    + Formula (http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)
+
+## Solution
+```{.js code-line-numbers="3|8|9|10|11-13|15|16|17|18"}
+var config = SWDiscoveryConfiguration
+  .init()
+  .sparqlEndpoint("https://forum.semantic-metabolomics.fr/sparql/");
+
+SWDiscovery(config)
+  .prefix("chebi","http://purl.obolibrary.org/obo/CHEBI_")
+  .something("var_study")
+    .set(URI("chebi:27732"))
+      .datatype(URI("http://purl.obolibrary.org/obo/chebi/formula"),"var_formula")
+      .datatype(URI("http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"),"var_name")
+  .select("var_study", "var_formula", "var_name")
+    .commit()
+    .raw()
+  .then((response)=>{
+    let study=response.results.bindings[0]["var_study"].value;
+    let formula=response.results.datatypes["var_formula"][study][0].value; 
+    let name = response.results.datatypes["var_name"][study][0].value;
+    isOK(`${name} : #Ref -> ${study}  #Formula -> ${formula}`);
+  })
+```
+
+. . .
+
+```{=html}
+<iframe 
+   src="../solutions/datatype_endpoint.html"
+   width="800"
+   height="100"
+></iframe>
+```
