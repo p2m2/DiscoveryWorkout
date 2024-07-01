@@ -32,3 +32,5 @@ format:
 <!-- Others function  -->
 {{< include _serialize.qmd >}}
 {{< include _help_console.qmd >}}
+<!-- thanks -->
+{{< include _thx.qmd >}}
