@@ -5,7 +5,7 @@
 - Explain and obtain sparql request
 
 ## Code 
-```{JS}
+```{.js code-line-numbers="|3|5"}
 .something("some")
    .set(URI("chebi:133719"))
       .helper();
