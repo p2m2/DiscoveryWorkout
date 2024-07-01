@@ -60,7 +60,7 @@ SWDiscovery(config)
 <br>
 ```{=html} 
 <iframe 
-   src="../samples/count_ressources.html" 
+   src="./samples/count_ressources.html" 
    width="200"
    height="100">
 </iframe>
@@ -95,7 +95,7 @@ SWDiscovery(config)
 ::: {.absolute left=750 top=200}
 ```{=html}
 <iframe 
-   src="../solutions/count_ressources.html" 
+   src="./solutions/count_ressources.html" 
    width="200"
    height="100">
 </iframe>

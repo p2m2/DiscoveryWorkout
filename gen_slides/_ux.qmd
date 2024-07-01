@@ -4,7 +4,7 @@
 - Increase UX
     + Display first part of query and waiting all results
 
-[long query]("../samples/long_query.html")
+[long query]("./samples/long_query.html")
 
 ## Code
 ```{.js code-line-numbers="3|7,8|9|11,12|17,18|21|22,23|25,26|28-32|34"}
@@ -54,14 +54,14 @@ function load(indexPage){
 
 ## Solution
 ```{html}
-{{< include ../samples/ux.html >}}
+{{< include ./samples/ux.html >}}
 ```
 . . .
 
 :::{.absolute top=0 left=0 style="background:white; "}
 ```{=html}
 <iframe 
-   src="../samples/ux.html"
+   src="./samples/ux.html"
    width="1000"
    height="8000"
 ></iframe>

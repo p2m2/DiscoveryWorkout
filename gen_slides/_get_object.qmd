@@ -41,7 +41,7 @@ SWDiscovery(config)
 <br>
 ```{=html}
 <iframe 
-   src="../samples/get_objects.html" 
+   src="./samples/get_objects.html" 
    width="500"
    height="400">
 </iframe>
@@ -77,7 +77,7 @@ SWDiscovery(config)
 ::: {.absolute right=0 top=200 style="background: white;"}
 ```{=html}
 <iframe 
-   src="../solutions/get_subjects.html" 
+   src="./solutions/get_subjects.html" 
    width="600"
    height="300">
 </iframe>

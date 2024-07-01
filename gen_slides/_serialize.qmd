@@ -41,7 +41,7 @@ messageElement.textContent =encodeURIComponent(
 
 ```{=html}
 <iframe 
-   src="../samples/serialize.html" 
+   src="./samples/serialize.html" 
    width="1000"
    height="500">
 </iframe>
@@ -65,7 +65,7 @@ objDiscovery
 
 ```{=html}
 <iframe 
-   src="../samples/deserialize.html" 
+   src="./samples/deserialize.html" 
    width="1000"
    height="500">
 </iframe>

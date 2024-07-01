@@ -13,4 +13,4 @@
       .console()      
 ```
 
-[sample](../samples/help_console.html) 
+[sample](./samples/help_console.html) 
