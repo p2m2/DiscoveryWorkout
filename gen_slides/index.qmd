@@ -15,6 +15,7 @@ format:
   inrae-revealjs: 
     scrollable: true
     lang: fr
+    footer: ""
 ---
 ## nothing {visibility="hidden"}
 <!-- Introduce animators -->
