@@ -27,3 +27,5 @@ format:
 {{< include _get_object.qmd >}}
 <!-- 3. Get label of ressource and add endpoint sparql -->
 {{< include _datatype_endpoint.qmd >}}
+<!-- 4. increase UX by lazy load -->
+{{< include _ux.qmd >}}

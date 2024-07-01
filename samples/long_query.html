@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX</title>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/p2m2/discovery@0.4.3/dist/discovery-web.min.js"> </script> 
+<script type="text/javascript" src="../utils/display.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="pagination.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<body>
+
+  <div id="icon-container">
+      <i id="status-icon" class="icon fas fa-spinner fa-spin"></i>
+  </div>
+  
+  <div id="status-message"></div>
+
+  <h1>Resultats</h1>
+
+  <div id="data-container"></div>
+<nav>
+    <div id="pagination-container"></div>
+</nav>
+
+</body>
+
+<script>
+const rowsPerPage = 5;
+var config = SWDiscoveryConfiguration
+    .init()
+    .sparqlEndpoint("https://forum.semantic-metabolomics.fr/sparql/");
+
+SWDiscovery(config)
+    .something()
+        .isObjectOf(URI("http://www.geneontology.org/formats/oboInOwl#inSubset"), "var_subject")
+            .datatype(URI("http://purl.obolibrary.org/obo/chebi/formula"),"var_formula")
+            .datatype(URI("http://purl.obolibrary.org/obo/chebi/mass"),"var_mass")
+            .datatype(URI("http://www.geneontology.org/formats/oboInOwl#id"), "var_id")
+    .select("var_subject", "var_formula", "var_mass", "var_id")
+    .commit()
+    .raw()
+    .then( (response)=>{
+        let result = []
+        for (let i=0;i<response.results.bindings.length;i++) {
+            let ref=response.results.bindings[i]["var_subject"].value;
+            let formula=" ";
+            if(response.results.datatypes["var_formula"][ref]!=undefined){
+                formula = response.results.datatypes["var_formula"][ref][0].value;
+            }
+             
+            let mass = " ";
+            if(response.results.datatypes["var_mass"][ref]!=undefined){
+                mass = response.results.datatypes["var_mass"][ref][0].value;
+            }
+            let id = " ";
+            if(response.results.datatypes["var_id"][ref]!=undefined){
+                id = response.results.datatypes["var_id"][ref][0].value;
+            }
+            result.push({id:id, mass:mass, form:formula});       
+        }
+        isOK("ready");
+        paginationFunc(result)
+    })
+
+
+function paginationFunc(data){
+    $('#pagination-container').pagination({
+    dataSource: data,
+    callback: function(data, pagination) {
+        var html = render(data);
+        $('#data-container').html(html);
+    }
+})
+}
+
+function render(data) {
+    var html = '<ul>';
+    $.each(data, function(index, item){
+        html += `<li>${item.id}: FORM->${item.form} MASS-> ${item.mass}</li>`;
+    });
+    html += '</ul>';
+    return html;
+}
+</script>
+</html>    
