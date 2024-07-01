@@ -29,3 +29,6 @@ format:
 {{< include _datatype_endpoint.qmd >}}
 <!-- 4. increase UX by lazy load -->
 {{< include _ux.qmd >}}
+<!-- Others function  -->
+{{< include _serialize.qmd >}}
+{{< include _help_console.qmd >}}
