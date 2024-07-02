@@ -1,7 +1,7 @@
 # Datatype
 
 ## Goal
-- Send request to RDF database on web
+- Send request to sparql endpoint
 - Know caracteristic of a ressources
 
 ## Code
