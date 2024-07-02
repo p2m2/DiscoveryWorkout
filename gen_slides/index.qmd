@@ -2,26 +2,26 @@
 title: "Discovery workout"
 subtitle: "Get Started"
 author:
-  - name: "**Olivier FILANGI**"
-    orcid: 0000-xxxx-xxxx-xxxx
+  - name: "Olivier FILANGI"
     email: olivier.filangi@inrae.fr
-    url: https://lien-site.fr
+    url: https://p2m2.github.io/discovery/
   - name: Marcellino PALERME
     email: marcellino.palerme@inrae.fr
-    orcid: 0000-xxxx-xxxx-xxxx
 date: today
 date-format: long
 format: 
   inrae-revealjs: 
     scrollable: true
     lang: fr
-    footer: ""
+    footer: "WebSemPilot 2-3 juillet 2024"
 ---
 ## nothing {visibility="hidden"}
 <!-- Introduce animators -->
-{{< include _animators.qmd >}}
+<!-- {{< include _animators.qmd >}} -->
 <!-- Introduce discovery -->
-{{< include _discovery.qmd >}}
+<!-- {{< include _discovery.qmd >}} -->
+<!-- 0. Source -->
+{{< include _source.qmd >}}
 <!-- 1. Count ressources -->
 {{< include _count_ressource.qmd >}}
 <!-- 2. Find object or subject-->
