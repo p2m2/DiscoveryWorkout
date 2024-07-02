@@ -50,7 +50,7 @@ SWDiscovery(config)
 ## Exercice
 
 * Get all compounds related to "Acid, Acyclic" in CID RDF database
-    + "Acid, Acyclic" => mesh terme D000144
+    + "Acid, Acyclic" => mesh term http://id.nlm.nih.gov/mesh/D000144
     + isObjectOf
 
 ## Solution
