@@ -1,32 +1,20 @@
 # Count Ressouce
 
 ## Goal
-::: {.absolute left=50 top=200 width="50" height="250" style="font-size:70pt; "}
+::: {.absolute left=0 top=200 width="50" height="250" style="font-size:70pt; "}
 Subject
 :::
-::: {.absolute left=400 top=135 width="250" height="250" style="font-size:150pt; "}
+::: {.absolute left=350 top=0 width="500" height="250" style="font-size:300pt; "}
 →
 :::
-::: {.absolute left=350 top=350 width="50" height="250" style="font-size:70pt; "}
+::: {.absolute left=350 top=270 width="50" height="300" style="font-size:70pt; "}
 predicate
 :::
 ::: {.absolute left=750 top=200 width="50" height="250" style="font-size:70pt; "}
 Object
 :::
 
-## Goal
-::: {.absolute left=50 top=200 width="50" height="250" style="font-size:70pt; "}
-Subject
-:::
-::: {.absolute left=400 top=135 width="250" height="250" style="font-size:150pt; "}
-→
-:::
-::: {.absolute left=350 top=350 width="50" height="250" style="font-size:70pt; "}
-predicate
-:::
-::: {.absolute left=750 top=200 width="50" height="250" style="font-size:70pt; "}
-Object
-:::
+. . . 
 
 Each part of triple is a ressource.
 
