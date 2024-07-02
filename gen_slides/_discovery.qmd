@@ -22,3 +22,27 @@
     ```{.js}
     require("@p2m2/discovery");
     ```
+
+## Integration 
+
+* HTML
+```{.html code-line-numbers="1-4"}
+<script 
+  type="text/javascript" 
+  src="https://cdn.jsdelivr.net/gh/p2m2/discovery@0.4.3/dist/discovery-web.min.js"> 
+</script> 
+```
+
+. . .
+
+::: {.absolute top=50 style="background:white"}
+![Vim The editor](https://raw.githubusercontent.com/vim/vim/master/runtime/vimlogo.gif)
+https://www.vim.org
+:::
+
+. . .
+
+::: {.absolute top=50 left=300 style="background:white" width=400}
+![browser](https://www.teltarif.de/img/internet/browser/browser-15og.jpg)(
+www.teltarif.de
+:::
