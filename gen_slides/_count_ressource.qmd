@@ -36,11 +36,11 @@ SWDiscovery(config)
         .raw()
         .then((response) => {
             // Show number of triple
-            console.log("count: "+response.results.bindings.length)
+            isOk("count: "+response.results.bindings.length)
             }
       ).catch( (error) => {
         console.error(" -- catch exception --")
-        console.error(error)
+        isKo(error)
       } );
 ```
 
