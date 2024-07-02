@@ -20,7 +20,7 @@
 
 ## Slide
 
-[Slides](https://marcellino-palerme.github.io/tp-discovery-websempilot/)
+[Slides](https://p2m2.github.io/tp-discovery-websempilot/)
 
 ## Template for exercice
 
