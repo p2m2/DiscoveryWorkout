@@ -18,10 +18,10 @@ format:
 ## nothing {visibility="hidden"}
 <!-- Introduce animators -->
 <!-- {{< include _animators.qmd >}} -->
-<!-- Introduce discovery -->
-<!-- {{< include _discovery.qmd >}} -->
-<!-- 0. Source -->
+<!-- -1. Source -->
 {{< include _source.qmd >}}
+<!-- 0. Introduce discovery -->
+{{< include _discovery.qmd >}}
 <!-- 1. Count ressources -->
 {{< include _count_ressource.qmd >}}
 <!-- 2. Find object or subject-->

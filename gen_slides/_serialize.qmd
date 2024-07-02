@@ -5,7 +5,7 @@
 Share result of request
 
 ## Code - serialize
-```{.js code-line-numbers="3-14|15-17|25|27|28|29"}
+```{.js code-line-numbers="3-14|15-17|25|27|28|29,20"}
  var config = SWDiscoveryConfiguration
     .init()
     .rdfContent(`

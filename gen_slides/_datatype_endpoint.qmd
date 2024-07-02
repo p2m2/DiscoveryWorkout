@@ -1,8 +1,8 @@
-# Sparql Endpoint and Datatype
+# Datatype
 
 ## Goal
-- Send request to RDF database on web
-- Know caracteristic of a ressources
+- Send request to sparql endpoint
+- Know caracteristic of a ressources (literal)
 
 ## Code
 - JavaScript
