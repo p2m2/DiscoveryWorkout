@@ -2,7 +2,7 @@
 
 ## Goal
 - Send request to sparql endpoint
-- Know caracteristic of a ressources
+- Know caracteristic of a ressources (literal)
 
 ## Code
 - JavaScript
