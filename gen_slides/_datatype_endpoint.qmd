@@ -1,4 +1,4 @@
-# Sparql Endpoint and Datatype
+# Datatype
 
 ## Goal
 - Send request to RDF database on web
