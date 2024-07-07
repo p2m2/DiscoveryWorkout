@@ -36,11 +36,27 @@ SWDiscovery(config)
 ## Execute
 <br>
 ```{=html}
-<iframe 
-   src="./samples/datatype_endpoint.html"
-   width="800"
-   height="400"
-></iframe>
+<script 
+  type="text/javascript" 
+  src="execute.js"></script>
+<!-- Button to execute  -->
+<button
+  id="btSaDE"
+  onclick="ExecuteIframe('btSaDE', 'SaDE', './samples/datatype_endpoint.html',[800,400])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SaDE">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe
+    src="./samples/datatype_endpoint.html"
+  >
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SaDE");
+</script>
 ```
 
 ## Exercice 
@@ -76,9 +92,25 @@ SWDiscovery(config)
 . . .
 
 ```{=html}
-<iframe 
-   src="./solutions/datatype_endpoint.html"
-   width="1000"
-   height="100"
-></iframe>
+<script 
+  type="text/javascript" 
+  src="execute.js"></script>
+<!-- Button to execute  -->
+<button
+  id="btSoDE"
+  onclick="ExecuteIframe('btSoDE', 'SoDE', './solutions/datatype_endpoint.html',[1000,100])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SoDE">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe
+    src="./solutions/datatype_endpoint.html"
+  >
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SoDE");
+</script>
 ```

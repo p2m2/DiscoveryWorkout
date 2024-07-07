@@ -47,11 +47,27 @@ SWDiscovery(config)
 ## Execute
 <br>
 ```{=html} 
-<iframe 
-   src="./samples/count_ressources.html" 
-   width="200"
-   height="100">
-</iframe>
+<script 
+  type="text/javascript" 
+  src="execute.js"></script>
+<!-- Button to execute  -->
+<button
+  id="btSaCR"
+  onclick="ExecuteIframe('btSaCR', 'SaCR', './samples/count_ressources.html',[200,100])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SaCR">
+<!-- We need add iframe to quarto keep source file -->
+  <iframe 
+    src="./samples/count_ressources.html" 
+  >
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SaCR");
+</script>
 ```
 
 ## Exercice
@@ -82,10 +98,29 @@ SWDiscovery(config)
 ```
 ::: {.absolute left=750 top=200}
 ```{=html}
-<iframe 
-   src="./solutions/count_ressources.html" 
-   width="200"
-   height="100">
-</iframe>
+<script 
+  type="text/javascript" 
+  src="execute.js"></script>
+<!-- Button to execute  -->
+
+
+
+<button
+  id="btSoCR"
+  onclick="ExecuteIframe('btSoCR', 'SoCR', './solutions/count_ressources.html',[200,100])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SoCR">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe
+    src="./solutions/count_ressources.html"
+    >
+  </iframe>
+</div>
+<script>
+  // To not execute we delete Iframe
+  ExecuteInit("SoCR");
+</script>
 ```
 :::

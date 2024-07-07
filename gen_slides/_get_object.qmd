@@ -40,11 +40,27 @@ SWDiscovery(config)
 ## Execute
 <br>
 ```{=html}
-<iframe 
-   src="./samples/get_objects.html" 
-   width="500"
-   height="400">
-</iframe>
+<script 
+  type="text/javascript" 
+  src="execute.js"></script>
+<!-- Button to execute  -->
+<button
+  id="btSaGE"
+  onclick="ExecuteIframe('btSaGE', 'SaGE', './samples/get_objects.html',[500,400])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SaGE">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe
+    src="./samples/get_objects.html"
+  >
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SaGE");
+</script>
 ```
 
 ## Exercice
@@ -76,10 +92,26 @@ SWDiscovery(config)
 
 ::: {.absolute right=0 top=200 style="background: white;"}
 ```{=html}
-<iframe 
-   src="./solutions/get_subjects.html" 
-   width="600"
-   height="300">
-</iframe>
+<script 
+  type="text/javascript" 
+  src="execute.js"></script>
+<!-- Button to execute  -->
+<button
+  id="btSoGE"
+  onclick="ExecuteIframe('btSoGE', 'SoGE', './solutions/get_subjects.html',[600,300])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SoGE">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe
+    src="./solutions/get_subjects.html"
+  >
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SoGE");
+</script>
 ```
 :::

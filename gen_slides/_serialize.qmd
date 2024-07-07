@@ -40,11 +40,27 @@ messageElement.textContent =encodeURIComponent(
 ## Execution
 
 ```{=html}
-<iframe 
-   src="./samples/serialize.html" 
-   width="1000"
-   height="500">
-</iframe>
+<script 
+  type="text/javascript" 
+  src="execute.js"></script>
+<!-- Button to execute  -->
+<button
+  id="btSaS"
+  onclick="ExecuteIframe('btSaS', 'SaS', './samples/serialize.html',[1000,500])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SaS">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe
+    src="./samples/serialize.html"
+  >
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SaS");
+</script>
 ```
 
 ## Code - deserialize
@@ -64,9 +80,25 @@ objDiscovery
 ## Execution
 
 ```{=html}
-<iframe 
-   src="./samples/deserialize.html" 
-   width="1000"
-   height="500">
-</iframe>
+<script 
+  type="text/javascript" 
+  src="execute.js"></script>
+<!-- Button to execute  -->
+<button
+  id="btSaD"
+  onclick="ExecuteIframe('btSaD', 'SaD', './samples/deserialize.html',[1000,500])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SaD">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe
+    src="./samples/deserialize.html"
+  >
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SaD");
+</script>
 ```

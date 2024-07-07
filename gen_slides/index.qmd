@@ -17,7 +17,7 @@ format:
 ---
 ## nothing {visibility="hidden"}
 <!-- Introduce animators -->
-<!-- {{< include _animators.qmd >}} -->
+{{< include _animators.qmd >}}
 <!-- -1. Source -->
 {{< include _source.qmd >}}
 <!-- 0. Introduce discovery -->
