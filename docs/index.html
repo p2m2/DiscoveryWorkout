@@ -415,9 +415,32 @@ Marcellino PALERME
 </div>
 </div>
 
-  <p class="date">3 juillet 2024</p>
+  <p class="date">7 juillet 2024</p>
 </section>
 
+<section>
+<section id="animators" class="title-slide slide level1 center">
+<h1>Animators</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Olivier FILANGI</strong><br>
+Software engineer<br>
+Discovery’s creator</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Marcellino PALERME</strong><br>
+Software assistant engineer</p>
+</div></div>
+<div class="absolute" style="left: 400px; width: 200px; ">
+<p><img data-src="./images/igepp.png" style="width:200.0%"></p>
+</div>
+<div class="absolute" style="top: 430px; left: 400px; ">
+<p><code>RCA team</code></p>
+</div>
+<div class="absolute" style="top: 500px; left: 400px; width: 200px; ">
+<p><img data-src="./images/p2m2.png"></p>
+</div>
+<!-- -1. Source -->
+</section>
 <section id="sources" class="slide level2">
 <h2>Sources</h2>
 <h3 id="workout">Workout</h3>
@@ -430,7 +453,7 @@ Marcellino PALERME
 <li>https://p2m2.github.io/discovery/</li>
 </ul>
 <!-- 0. Introduce discovery -->
-</section>
+</section></section>
 <section>
 <section id="discovery" class="title-slide slide level1 center">
 <h1>Discovery</h1>
@@ -535,8 +558,21 @@ Marcellino PALERME
 <section id="execute" class="slide level2">
 <h2>Execute</h2>
 <p><br></p>
-<iframe src="./samples/count_ressources.html" width="200" height="100">
-</iframe>
+<script type="text/javascript" src="execute.js"></script>
+<!-- Button to execute  -->
+<button id="btSaCR" onclick="ExecuteIframe('btSaCR', 'SaCR', './samples/count_ressources.html',[200,100])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SaCR">
+<!-- We need add iframe to quarto keep source file -->
+  <iframe src="./samples/count_ressources.html">
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SaCR");
+</script>
 </section>
 <section id="exercice" class="slide level2">
 <h2>Exercice</h2>
@@ -568,8 +604,24 @@ Marcellino PALERME
 <span id="cb6-16"><a href=""></a>        <span class="fu">isKo</span>(error)</span>
 <span id="cb6-17"><a href=""></a>      })<span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="absolute" style="top: 200px; left: 750px; ">
-<iframe src="./solutions/count_ressources.html" width="200" height="100">
-</iframe>
+<script type="text/javascript" src="execute.js"></script>
+<!-- Button to execute  -->
+
+
+
+<button id="btSoCR" onclick="ExecuteIframe('btSoCR', 'SoCR', './solutions/count_ressources.html',[200,100])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SoCR">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe src="./solutions/count_ressources.html">
+  </iframe>
+</div>
+<script>
+  // To not execute we delete Iframe
+  ExecuteInit("SoCR");
+</script>
 </div>
 <!-- 2. Find object or subject-->
 </section></section>
@@ -617,8 +669,21 @@ Marcellino PALERME
 <section id="execute-1" class="slide level2">
 <h2>Execute</h2>
 <p><br></p>
-<iframe src="./samples/get_objects.html" width="500" height="400">
-</iframe>
+<script type="text/javascript" src="execute.js"></script>
+<!-- Button to execute  -->
+<button id="btSaGE" onclick="ExecuteIframe('btSaGE', 'SaGE', './samples/get_objects.html',[500,400])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SaGE">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe src="./samples/get_objects.html">
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SaGE");
+</script>
 </section>
 <section id="exercice-1" class="slide level2">
 <h2>Exercice</h2>
@@ -650,8 +715,21 @@ Marcellino PALERME
 <span id="cb8-16"><a href=""></a>        <span class="fu">isOK</span>(message)<span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <div class="absolute" style="background: white;top: 200px; right: 0px; ">
-<iframe src="./solutions/get_subjects.html" width="600" height="300">
-</iframe>
+<script type="text/javascript" src="execute.js"></script>
+<!-- Button to execute  -->
+<button id="btSoGE" onclick="ExecuteIframe('btSoGE', 'SoGE', './solutions/get_subjects.html',[600,300])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SoGE">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe src="./solutions/get_subjects.html">
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SoGE");
+</script>
 </div>
 <!-- 3. Get label of ressource and add endpoint sparql -->
 </div>
@@ -700,7 +778,21 @@ Marcellino PALERME
 <section id="execute-2" class="slide level2">
 <h2>Execute</h2>
 <p><br></p>
-<iframe src="./samples/datatype_endpoint.html" width="800" height="400"></iframe>
+<script type="text/javascript" src="execute.js"></script>
+<!-- Button to execute  -->
+<button id="btSaDE" onclick="ExecuteIframe('btSaDE', 'SaDE', './samples/datatype_endpoint.html',[800,400])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SaDE">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe src="./samples/datatype_endpoint.html">
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SaDE");
+</script>
 </section>
 <section id="exercice-2" class="slide level2">
 <h2>Exercice</h2>
@@ -735,7 +827,21 @@ Marcellino PALERME
 <span id="cb10-18"><a href=""></a>    <span class="fu">isOK</span>(<span class="vs">`</span><span class="sc">${</span>name<span class="sc">}</span><span class="vs"> : #Ref -&gt; </span><span class="sc">${</span>study<span class="sc">}</span><span class="vs">  #Formula -&gt; </span><span class="sc">${</span>formula<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
 <span id="cb10-19"><a href=""></a>  })</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<iframe src="./solutions/datatype_endpoint.html" width="1000" height="100"></iframe>
+<script type="text/javascript" src="execute.js"></script>
+<!-- Button to execute  -->
+<button id="btSoDE" onclick="ExecuteIframe('btSoDE', 'SoDE', './solutions/datatype_endpoint.html',[1000,100])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SoDE">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe src="./solutions/datatype_endpoint.html">
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SoDE");
+</script>
 <!-- 4. increase UX by lazy load -->
 </div>
 </section></section>
@@ -954,7 +1060,21 @@ Marcellino PALERME
 <span id="cb12-147"><a href=""></a></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <div class="absolute" style="background:white; top: 0px; left: 0px; ">
-<iframe src="./samples/ux.html" width="1000" height="8000"></iframe>
+<script type="text/javascript" src="execute.js"></script>
+<!-- Button to execute  -->
+<button id="btSaUX" onclick="ExecuteIframe('btSaUX', 'SaUX', './samples/ux.html',[1000,8000])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SaUX">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe src="./samples/ux.html">
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SaUX");
+</script>
 </div>
 <!-- Others function  -->
 </div>
@@ -1002,8 +1122,21 @@ Marcellino PALERME
 </section>
 <section id="execution" class="slide level2">
 <h2>Execution</h2>
-<iframe src="./samples/serialize.html" width="1000" height="500">
-</iframe>
+<script type="text/javascript" src="execute.js"></script>
+<!-- Button to execute  -->
+<button id="btSaS" onclick="ExecuteIframe('btSaS', 'SaS', './samples/serialize.html',[1000,500])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SaS">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe src="./samples/serialize.html">
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SaS");
+</script>
 </section>
 <section id="code---deserialize" class="slide level2">
 <h2>Code - deserialize</h2>
@@ -1019,8 +1152,21 @@ Marcellino PALERME
 </section>
 <section id="execution-1" class="slide level2">
 <h2>Execution</h2>
-<iframe src="./samples/deserialize.html" width="1000" height="500">
-</iframe>
+<script type="text/javascript" src="execute.js"></script>
+<!-- Button to execute  -->
+<button id="btSaD" onclick="ExecuteIframe('btSaD', 'SaD', './samples/deserialize.html',[1000,500])">
+  GO
+</button>
+<!-- Where we show result of script -->
+<div id="SaD">
+  <!-- We need add iframe to quarto keep source file -->
+  <iframe src="./samples/deserialize.html">
+  </iframe>
+</div>
+<script>
+  // To no execute we delete Iframe
+  ExecuteInit("SaD");
+</script>
 </section></section>
 <section>
 <section id="help-and-request" class="title-slide slide level1 center">
